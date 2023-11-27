@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+    <style type="text/css">
+      .policy{
+        margin: 20px auto;
+        text-align:center;
+      }
+      .submit_btnarea {
+          width: 360px;
+          margin: 0 auto;
+      }
+      .form_btn{
+          border: 1px solid #fff;
+          color: #fff;
+          padding: 10px;
+          cursor: pointer;
+          transition: all .5s ease-out;
+          position: relative;
+      }
+
+      button[type="submit"][disabled] {
+        background-repeat:  no-repeat; 
+      }
+
+      button[type="submit"][disabled] img{
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: grayscale(100%);
+      }
+      
+      button {
+        padding: 0;
+        border: none;
+        background: transparent;           
+      }
+
+      button img {
+        display: block;           
+      }
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+      $(function() {
+          $('#submit').attr('disabled', 'disabled'); 
+          $('#chkbox').click(function() { //②
+            if ( $(this).prop('checked') == false ) {
+              $('#submit').attr('disabled', 'disabled');
+            } else {
+              $('#submit').removeAttr('disabled');
+            }
+          });
+        });
+    </script>
+
+  </head>
+  
+  <body>
+    <div class="policy">
+      <input type="checkbox" id="chkbox" name="policy_doui" value="1">
+      <label for="chkbox">「個人情報の取り扱いについて」に同意する</label>
+    </div>
+    <div class="submit_btnarea">
+      <button type="submit" value="同意する" class="form_btn" id="submit" disabled="disabled" onclick="location.href='https://mteam.jp/column/10169/'"><img src="doui.png"></button>
+      <button value="同意しない" class="form_btn" onclick="location.href='https://mail.google.com/mail'"><img src="doui_shinai.png"></button>
+    </div>
+  </body>
+  
+</html>
