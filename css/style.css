@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+/*テーマカラーの定義
+---------------------------------------------------------------------------*/
+:root {
+    --primary-color: rgb(247, 215, 215);
+}
+
+
 html,body {
 	height: 100%;
 	font-size: 13px;	/*基準となるフォントサイズ。*/
@@ -36,22 +43,55 @@ header {
 	width: 300px;	/*ロゴの幅*/
 }
 
-/*================================
-メインメニュー
-================================*/
-ul#menu {
-	width:960px;
-	height:50px;
+/*メニューブロック
+---------------------------------------------------------------------------*/
+#menubar ul {
+	margin: 0;padding: 0;
+	margin-bottom: 3rem;			/*下に空けるスペース。３文字分。*/
+	display: flex;					/*flexボックスを使う指定*/
+	justify-content: space-around;	/*並びかたの種類の指定*/
+	border-top: 1px solid #dcaee2;		/*上の線の幅、線種、色*/
+	border-bottom: 1px solid #dcaee2;	/*下の線の幅、線種、色*/
+}
+/*メニュー１個あたりの設定*/
+#menubar li {
+	flex: 1;
+	text-align: center;
+	list-style: none;
+}
+#menubar a {
+	text-decoration: none;
+	display: block;
+	color: inherit;
+	padding: 0.7rem 0.5rem;		/*上下、左右へのメニュー内の余白*/
 }
 
-#menu li {
-	list-style-type:none;
-	display:inline;
-	float:left;
+/*マウスオン時*/
+#menubar a:hover {
+	background: var(--primary-color);	/*背景色。css冒頭で指定しているテーマカラーを読み込みます*/
+	color: #fff;						/*文字色*/
 }
 
-#menu li a {
-	display:block;
-	width:240px;
-	height:35px;
+/*お知らせブロック
+---------------------------------------------------------------------------*/
+#news dt {
+	float : left;
+	padding-left: 20px;
+}
+/*日付(dt)設定*/
+#news dt {
+	width: 8em;	/*幅。8文字(em)分*/
+}
+
+/*記事(dd)設定*/
+#news dd {
+	width: calc(100% - 8em);	/*「8em」は上の「.new dt」のwidthの値です*/
+}
+
+/*mainブロック内のh2*/
+main h2 {
+	font-size: 1.8rem;		/*文字サイズ*/
+	text-align: center;		/*テキストをセンタリング*/
+	letter-spacing: 0.2em;	/*文字間隔を広くする指定*/
+	color: var(--primary-color);	/*文字色。css冒頭で指定しているテーマカラーを読み込みます*/
 }
