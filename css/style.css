@@ -22,3 +22,20 @@ body {
 	color: #777;		/*文字色*/
 	line-height: 2.5;		/*行間*/
 }
+
+ul#menu {
+	width:960px;
+	height:50px;
+}
+
+#menu li {
+	list-style-type:none;
+	display:inline;
+	float:left;
+}
+
+#menu li a {
+	display:block;
+	width:240px;
+	height:35px;
+}
